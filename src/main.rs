@@ -1,5 +1,6 @@
 use std::env;
 use std::process;
+use std::fs;
 mod days;
 
 fn main() {
@@ -30,6 +31,13 @@ fn run(num_day: usize, num_part: usize) {
         println!("Part out of range: {}", num_part);
         process::exit(1)
     }
-    let result = days[num_day - 1][num_part - 1]("asdf");
+    let input = read_input(num_day);
+    let result = days[num_day - 1][num_part - 1](&input);
     println!("{}", result)
+}
+
+fn read_input(num_day: usize) -> String {
+    let file_name = format!("input/{}.txt", num_day);
+    let msg = format!("Could not read input {}", file_name);
+    fs::read_to_string(file_name).expect(&msg)
 }
