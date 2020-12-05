@@ -22,7 +22,10 @@ fn main() {
 }
 
 fn run(num_day: usize, num_part: usize) {
-    let days = [[days::d01::part_one, days::d01::part_two]];
+    let days = [
+        [days::d01::part_one, days::d01::part_two],
+        [days::d02::part_one, days::d02::part_two]
+    ];
     if num_day > days.len() {
         println!("Day out of range: {}", num_day);
         process::exit(1)
