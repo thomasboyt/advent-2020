@@ -27,6 +27,7 @@ fn run(num_day: usize, num_part: usize) {
         [days::d02::part_one, days::d02::part_two],
         [days::d03::part_one, days::d03::part_two],
         [days::d04::part_one, days::d04::part_two],
+        [days::d05::part_one, days::d05::part_two],
     ];
     if num_day > days.len() {
         println!("Day out of range: {}", num_day);
